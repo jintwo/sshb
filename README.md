@@ -1,4 +1,4 @@
-Simple stupid HTML builder in LUA 
+Simple stupid HTML builder in LUA
 =================================
 
 ```lua
@@ -8,7 +8,7 @@ h.import { 'canvas' } -- import custom tags
 
 local data = html {
     head {
-        title { 'title' }
+        title 'title'
     },
     body {
         div {
