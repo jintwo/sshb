@@ -26,12 +26,16 @@ setmetatable(h, {
             local content = ''
             local attrs = ''
 
-            for key, node in pairs(params) do
-                if type(key) == 'string' then
-                    attrs = attrs .. ' ' .. tostring(key) .. "='" .. tostring(node) .. "'"
-                else
-                    content = content ..  node
+            if type(params) == 'table' then
+                for key, node in pairs(params) do
+                    if type(key) == 'string' then
+                        attrs = attrs .. ' ' .. tostring(key) .. "='" .. tostring(node) .. "'"
+                    else
+                        content = content ..  node
+                    end
                 end
+            elseif type(params) == 'string' then
+                content = params
             end
 
             return string.format(

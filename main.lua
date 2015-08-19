@@ -4,7 +4,7 @@ h.import()
 
 local data = html {
     head {
-        title { 'hello' },
+        title 'hello',
         script { src = '/path/to/script' }
     },
     body {
