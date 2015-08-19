@@ -1,6 +1,7 @@
 #!/usr/bin/env lua
 h = require('html')
 h.import()
+h.import('canvas') -- h.import { 'canvas', ... }
 
 local data = html {
     head {
@@ -16,6 +17,7 @@ local data = html {
         },
         div {
             a { href = '/link2/to/something' },
+            canvas { attr = 'value' }
         },
         form {
             method = 'post',

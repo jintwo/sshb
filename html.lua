@@ -10,6 +10,9 @@ local h = {
         if not tags then
             tags = default_tags
         end
+        if type(tags) ~= 'table' then
+            tags = {tags}
+        end
         for _, tag in ipairs(tags) do
             if _G[tag] then
                 error(string.format("function '%s' already exists", tag))
